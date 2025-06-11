@@ -1,0 +1,19 @@
+<div class="d-flex">
+  <div *ngIf="!hideNavbar" class="bg-dark text-white vh-100 p-3" style="width: 220px;">
+    <h4 class="text-center mb-4">Usuários App</h4>
+    <ul class="nav flex-column">
+      <li class="nav-item mb-2">
+        <a class="nav-link text-white" routerLink="/users" routerLinkActive="fw-bold">📋 Lista</a>
+      </li>
+      <li class="nav-item mb-2">
+        <a class="nav-link text-white" routerLink="/users/new" routerLinkActive="fw-bold">➕ Novo</a>
+      </li>
+      <li class="nav-item mt-4">
+        <a class="nav-link text-danger" (click)="logout()">🚪 Sair</a>
+      </li>
+    </ul>
+  </div>
+  <div class="flex-grow-1 p-4">
+    <router-outlet></router-outlet>
+  </div>
+</div>
