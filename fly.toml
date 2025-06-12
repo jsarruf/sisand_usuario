@@ -1,0 +1,19 @@
+# fly.toml for usuario_sis (deploy via Fly.io)
+
+app = "usuario-sis"
+primary_region = "gru"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  ASPNETCORE_URLS = "http://+:80"
+  DOTNET_RUNNING_IN_CONTAINER = "true"
+
+[http_service]
+  internal_port = 80
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
